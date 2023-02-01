@@ -1,0 +1,166 @@
+/* Custom font  */
+@font-face {
+    font-family: 'Norse-Bold';
+    font-weight: 300;
+    src: url(./Norse-Bold.otf)
+}
+@font-face {
+    font-family: 'Norse-Bold';
+    font-weight: 500;
+    src: url(./Norse-Bold.otf)
+}
+@font-face {
+    font-family: 'Norse-Bold';
+    font-weight: 600;
+    src: url(./Norse-Bold.otf)
+}
+@font-face {
+    font-family: 'Norse-Bold';
+    font-weight: 700;
+    src: url(./Norse-Bold.otf)
+}
+
+/* General css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+
+
+
+/* Container */
+.container{
+    display: flex;
+}
+
+
+
+/* Banner */
+.banner{
+    background-image: url(./Banner.jpg);
+    background-size:cover;
+    color:#fff;
+    flex:1;
+    position: relative;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+.banner .logo {
+    width:100%;
+    position: absolute;
+    top:20%;
+    background-color:rgba(20, 20, 20, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .logo img{
+    width:60px;
+}
+.banner .logo span{
+    font-size: 60px;
+    font-family: Norse-Bold;
+}
+
+.banner a{
+    color:#fff;
+}
+
+.banner > p{
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+/* Content */
+.content{
+    width:60%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:30px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+
+/* Slogan */
+.content .slogan p{
+    font-weight: 700;
+}
+
+
+
+/* Form */
+.content form{
+    padding: 20px 0 50px 30px;
+    box-shadow: 0 4px 7px 0 rgba(121, 121, 121,0.7); 
+    margin: 30px 0 30px -30px;
+}
+
+.content form{
+    color:#333;
+}
+
+form .form-field{
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    margin-top: 10px;
+}
+form .form-field label{
+    font-weight: 600;
+    color:rgba(97, 96, 96, 0.7)
+}
+form .form-field .form-block input{
+    border-radius:3px;
+    padding:5px 0 5px 10px;
+    margin-right: 20px;
+    border:1px solid rgb(201, 200, 200);
+    outline:none;
+    width:260px;
+    line-height: 30px;
+}
+
+form .form-field .form-block p.warning{
+    color:red;
+    font-size: 12px;
+    display: none;
+}
+
+form .form-field .form-block input:focus{
+    border:3px solid rgb(45, 142, 187); 
+}
+
+form .form-field .form-block input#password.error, input#cPassword.error{
+    border:2px solid rgb(207, 39, 39)
+}
+
+
+/* Button */
+.container button{
+    background-color:#596D48;
+    padding: 10px 20px;
+    width:fit-content;
+    border:none;
+    border-radius:8px;
+    margin-bottom: 10px;
+    color:#fff
+}
+
+.container button:hover{
+    background: #333;
+}
+/* Log in link */
+.container .content>p>a{
+    text-decoration: none;
+    color:#596D48;
+}
+

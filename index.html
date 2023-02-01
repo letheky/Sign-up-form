@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="logo">
+                <img src="./logo.png" alt="The Odin project" >
+                <span>ODIN</span>
+            </div>
+            <p>Photo by <a href="#">Halie West</a> on <a href="#">Unsplash</a></p>
+        </div>
+        <div class="content">
+            <div class="slogan">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, optio illo! Cum aspernatur magnam ea libero quo excepturi, enim dolorem perspiciatis minus quasi impedit totam rem cupiditate rerum error natus.</p>
+                <p>Sign up <em>now</em> to get started.</p>
+                <br/>
+                <p>You <em>know</em> you want to.</p>
+            </div>
+            <form action="#" method="post">
+                <h3>Let's do this!</h3>
+                <div class="form-field">
+                    <div class="form-block">
+                        <label for="first-name">FIRST NAME</label><br/>
+                        <input type="text" id="first-name" name="firstName" placeholder="Please enter your first name here!">
+                        <p class="warning"><sup>*</sup>Please fill the first name field</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="last-name">LAST NAME</label><br/>
+                        <input type="text" id="last-name" name="lastName" placeholder="Please enter your last name here!">
+                        <p class="warning"><sup>*</sup>Please fill the last name fieldh</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="email">EMAIL</label><br/>
+                        <input type="email" id="email" name="email" placeholder="Please enter your email address here!">
+                        <p class="warning"><sup>*</sup>Please fill the email field</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="phone-number">PHONE NUMBER</label><br/>
+                        <input type="number" id="phone-number" name="phoneNumber" placeholder="Please enter your phone number here!">
+                        <p class="warning"><sup>*</sup>Please fill the phone number field</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="password">PASSWORD</label><br/>
+                        <input  type="password" id="password" name="password" placeholder="Please enter your password here!">
+                        <p class="warning"><sup>*</sup>Your password are not match</p>
+                    </div>
+                    <div class="form-block">
+                        <label for="cPassword">CONFIRM PASSWORD</label><br/>
+                        <input  type="password" id="cPassword" name="cPassword" placeholder="Retype your password here!">
+                    </div>
+                </div>
+            </form>
+            <button type="submit" onclick="checkPass()">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+    <script>
+        let pass = document.querySelector('#password')
+        let cPass = document.querySelector('#cPassword')
+        let warnText = document.querySelectorAll('.warning')
+        let inputText = document.querySelectorAll('input')
+        let input1 = input2 = ''
+        let indexBeforeCheckPass
+        function checkPass(input1, input2){
+            input1 = pass.value
+            input2 = cPass.value
+
+            inputText.forEach(
+                (c,i)=> {
+                        if(i<4){if(c.value==='')warnText[i].style.display = 'block'
+                        else warnText[i].style.display = 'none'}
+                    }
+            )
+
+            if(input1!==input2){
+                pass.classList.add('error')
+                cPass.classList.add('error')
+                warnText[4].style.display = 'block'
+            }
+            else{
+                pass.classList.remove('error')
+                cPass.classList.remove('error')
+                warnText[4].style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html>
